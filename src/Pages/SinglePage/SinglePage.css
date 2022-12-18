@@ -1,0 +1,10 @@
+.back-link::before {
+	position: absolute;
+	left: 0;
+	bottom: 10%;
+	width: 14px;
+	height: 14px;
+	background-image: url('../../assets/img/back-arrow.svg');
+	background-repeat: no-repeat;
+	content: '';
+}
