@@ -8,3 +8,12 @@
 	background-repeat: no-repeat;
 	content: '';
 }
+
+#SingleWrap,
+#back {
+	color: var(--main-text-color) !important;
+}
+
+#singleItem {
+	height: 100vh;
+}

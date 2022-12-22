@@ -1,75 +1,70 @@
-:root{
-    --main-white-color: #FFF;
-    --main-body-color: #f2f2f2;
-    --main-text-color: #111517;
+.container {
+	width: 100%;
+	max-width: 1320px;
+	margin: 0 auto;
+	padding: 0 20px;
 }
 
-.container{
-    width: 100%;
-    max-width: 1320px;
-    margin: 0 auto;
-    padding: 0 20px;
+.form {
+	padding-top: 48px;
+	padding-bottom: 48px;
+	display: flex;
+	justify-content: space-between;
 }
 
-.form{
-    padding-top: 48px;
-    padding-bottom: 48px;
-    display: flex;
-    justify-content: space-between;
+.form-label {
+	position: relative;
 }
 
-.form-label{
-    position: relative;
+.form-label::before {
+	position: absolute;
+	content: '';
+	background: url('/src/assets/img/search.svg');
+	background-repeat: no-repeat;
+	width: 18px;
+	height: 18px;
+	bottom: 19px;
+	left: 18px;
 }
 
-.form-label::before{
-    position: absolute;
-    content: "";
-    background: url("/src/assets/img/search.svg");
-    background-repeat: no-repeat;
-    width: 18px;
-    height: 18px;
-    bottom: 19px;
-    left: 18px;
+.form-input {
+	width: 480px;
+	padding-top: 18px;
+	padding-bottom: 18px;
+	padding-left: 50px;
+	background: var(--main-white-color);
+	box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+	border-radius: 5px;
+	border: none;
+	font-size: 14px;
+	line-height: 20px;
+	color: #848484;
 }
 
-.form-input{
-    width: 480px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    padding-left: 50px;
-    background: var(--main-white-color);
-    box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
-    border-radius: 5px;
-    border: none;
-    font-size: 14px;
-    line-height: 20px;
-    color: #848484;
+.form-select {
+	position: relative;
+	width: 200px;
+	padding-top: 18px;
+	padding-bottom: 18px;
+	padding-left: 24px;
+	color: var(--main-text-color);
+	background: var(--main-white-color);
+	box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+	border-radius: 5px;
+	appearance: none;
+	border: none;
 }
 
-.form-select{
-    position: relative;
-    width: 200px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    padding-left: 24px;
-    background: var(--main-white-color);
-    box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
-    border-radius: 5px;
-    appearance: none;
-    border: none;
+.select-box {
+	position: relative;
 }
 
-.select-box{
-    position: relative;
-}
-
-.select-box::after{
-    position: absolute;
-    content: "";
-    background: url("/src/assets/img/arrow.svg") no-repeat;
-    width: 12px;
-    height: 12px;
-    right: 15px;
-    bottom: 22px;
+.select-box::after {
+	position: absolute;
+	content: '';
+	background: url('/src/assets/img/arrow.svg') no-repeat;
+	width: 12px;
+	height: 12px;
+	right: 15px;
+	bottom: 22px;
 }

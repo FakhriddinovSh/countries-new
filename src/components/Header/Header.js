@@ -1,15 +1,20 @@
 import '../Header/header.css';
-import { NavLink } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ theme, setTheme }) => {
 	return (
 		<header>
 			<div className="header">
 				<div className="header-box container">
 					<a href="./index.html">Where in the world?</a>
-					<button type="button" className="header-mode">
-						Dark Mode
-					</button>
+
+					<select
+						defaultValue={theme}
+						onChange={(e) => setTheme(e.target.value)}
+						className="header-mode"
+					>
+						<option value="light">Light Mode</option>
+						<option value="dark">Dark Mode</option>
+					</select>
 				</div>
 			</div>
 		</header>
