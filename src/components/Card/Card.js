@@ -3,7 +3,7 @@ import Items from '../Items/Item';
 import { useState, useEffect } from 'react';
 import SearchForm from '../Form/Form123';
 
-const Cards = () => {
+const Cards = ({ lang }) => {
 	const [data, setData] = useState({
 		isLoading: true,
 		data: [],
@@ -50,7 +50,7 @@ const Cards = () => {
 
 	return (
 		<section>
-			<SearchForm setData={setValue} setSelect={setSelect} />
+			<SearchForm setData={setValue} setSelect={setSelect} lang={lang} />
 			<div className="container">
 				{data.isLoading && <h2>Loading...</h2>}
 				{data.isError && <h2>Error...</h2>}
@@ -58,6 +58,7 @@ const Cards = () => {
 					<ul className="card-list row">
 						{data.data.map((item) => (
 							<Items
+								lang={lang}
 								image={item.flags?.svg}
 								title={item.name?.common}
 								population={item.population}

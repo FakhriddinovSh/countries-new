@@ -2,8 +2,9 @@ import { NavLink, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { BorderCountry } from '../../components/Button/BorderCount';
 import './SinglePage.css';
+import { Language } from '../../Languages/Languages';
 
-export const SinglePage = ({ theme }) => {
+export const SinglePage = ({ theme, lang }) => {
 	const { name } = useParams();
 	console.log(name);
 
@@ -40,7 +41,7 @@ export const SinglePage = ({ theme }) => {
 					}}
 					to="/"
 				>
-					Back
+					{Language[lang].single.back}
 				</NavLink>
 				<div className="d-flex">
 					{data.data.map((item) => {
@@ -66,31 +67,39 @@ export const SinglePage = ({ theme }) => {
 									>
 										<div>
 											<p className="fw-bold">
-												Native name:
+												{Language[lang].single.name}:
 												<span className="fw-normal ms-2">
 													{item.name.common}
 												</span>
 											</p>
 											<p className="fw-bold">
-												Population:{' '}
+												{
+													Language[lang].single
+														.population
+												}
+												:{' '}
 												<span className="fw-normal ms-2">
 													{item.population}
 												</span>
 											</p>
 											<p className="fw-bold">
-												Region:{' '}
+												{Language[lang].single.region}:{' '}
 												<span className="fw-normal ms-2">
 													{item.region}
 												</span>
 											</p>
 											<p className="fw-bold">
-												Sub Region:{' '}
+												{
+													Language[lang].single
+														.subregion
+												}
+												:{' '}
 												<span className="fw-normal ms-2">
 													{item.subregion}
 												</span>
 											</p>
 											<p className="fw-bold">
-												Capital:{' '}
+												{Language[lang].single.capital}:{' '}
 												<span className="fw-normal ms-2">
 													{item.capital}
 												</span>
@@ -98,13 +107,17 @@ export const SinglePage = ({ theme }) => {
 										</div>
 										<div>
 											<p className="fw-bold">
-												Top Level Domain:
+												{Language[lang].single.domain}:
 												<span className="fw-normal ms-2">
 													{item.tld}
 												</span>
 											</p>
 											<p className="fw-bold">
-												Currencies:
+												{
+													Language[lang].single
+														.currencies
+												}
+												:
 												<span className="fw-normal ms-2">
 													{Object.keys(
 														item.currencies,
@@ -112,7 +125,11 @@ export const SinglePage = ({ theme }) => {
 												</span>
 											</p>
 											<p className="fw-bold">
-												Languages:
+												{
+													Language[lang].single
+														.languages
+												}
+												:
 												<span className="fw-normal ms-2">
 													{Object.values(
 														item.languages,
@@ -123,7 +140,7 @@ export const SinglePage = ({ theme }) => {
 									</div>
 
 									<p className="fw-bold mt-5">
-										Borders:
+										{Language[lang].single.borders}:
 										<span className="fw-normal ms-2">
 											{item.borders
 												? item.borders?.map((item) => (

@@ -14,14 +14,27 @@ function App() {
 		localStorage.setItem('theme', theme);
 	}, [theme]);
 
+	const [til, setLanguage] = useState(
+		localStorage.getItem('language') || 'en',
+	);
+
+	useEffect(() => {
+		localStorage.setItem('language', til);
+	}, [til]);
+
 	return (
 		<div className={theme} id="allWrapper">
-			<Header theme={theme} setTheme={setTheme} />
+			<Header
+				theme={theme}
+				setTheme={setTheme}
+				lang={til}
+				setLanguage={setLanguage}
+			/>
 			<Routes>
-				<Route path="/" element={<Card />} />
+				<Route path="/" element={<Card lang={til} />} />
 				<Route
 					path="/country/:name"
-					element={<SinglePage theme={theme} />}
+					element={<SinglePage theme={theme} lang={til} />}
 				/>
 			</Routes>
 		</div>

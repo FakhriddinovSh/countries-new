@@ -1,17 +1,8 @@
+import { Language } from '../../Languages/Languages';
 import '../Form/form.css';
-// import Cards from '../Card/Card';
 
-const SearchForm = ({ setData, setSelect }) => {
-	// const inputSearchGet = (evt) => {
-	// 	if (evt.key === 'Enter') {
-	// 		const searchedItem = evt.target.value;
-	// 		console.log(searchedItem);
-	// 		fetch(`https://restcountries.com/v3.1/name/uzbekistan`)
-	// 			.then((res) => res.json())
-	// 			.then((data) => console.log(data));
-	// 	}
-	// };
-
+const SearchForm = ({ setData, setSelect, lang }) => {
+	console.log(lang);
 	return (
 		<section>
 			<div className="container">
@@ -26,7 +17,7 @@ const SearchForm = ({ setData, setSelect }) => {
 							}}
 							className="form-input"
 							type="search"
-							placeholder="Search for a country…"
+							placeholder={Language[lang].header.placeholder}
 							name="input-search"
 						></input>
 					</label>
@@ -35,41 +26,41 @@ const SearchForm = ({ setData, setSelect }) => {
 						<select
 							defaultValue=""
 							className="form-select"
-							onClick={(evt) => setSelect(evt.target.value)}
+							onChange={(evt) => setSelect(evt.target.value)}
 						>
 							<option
 								className="form-select-option"
-								disabled
+								selected
 								hidden
 							>
-								Filter by Region
+								{Language[lang].header.filterOne}
 							</option>
 							<option
 								value="africa"
 								className="form-select-option"
 							>
-								Africa
+								{Language[lang].header.africa}
 							</option>
 							<option
 								value="america"
 								className="form-select-option"
 							>
-								Americas
+								{Language[lang].header.america}
 							</option>
 							<option value="asia" className="form-select-option">
-								Asia
+								{Language[lang].header.asia}
 							</option>
 							<option
 								value="europe"
 								className="form-select-option"
 							>
-								Europe
+								{Language[lang].header.europe}
 							</option>
 							<option
 								value="oceania"
 								className="form-select-option"
 							>
-								Oceania
+								{Language[lang].header.oceania}
 							</option>
 						</select>
 					</div>
