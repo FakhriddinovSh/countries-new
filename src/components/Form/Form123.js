@@ -2,7 +2,6 @@ import { Language } from '../../Languages/Languages';
 import '../Form/form.css';
 
 const SearchForm = ({ setData, setSelect, lang }) => {
-	console.log(lang);
 	return (
 		<section>
 			<div className="container">

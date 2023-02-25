@@ -26,7 +26,6 @@ export const SinglePage = ({ theme, lang }) => {
 			});
 	}, [name]);
 
-	console.log(data.data);
 	return (
 		<div className={theme} id="singleItem">
 			<div className="container">
